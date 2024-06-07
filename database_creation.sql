@@ -1,4 +1,4 @@
-CREATE DATABASE tiktok.db;
+CREATE DATABASE tiktok_db;
 CREATE TABLE music_data(
     track_name varchar(200) NOT NULL,
     artist_name varchar(200) NOT NULL,
