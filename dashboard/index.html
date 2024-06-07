@@ -43,9 +43,11 @@
     <div class="row">
       <div class="col-md-12">
         <div id="line_graph"></div>
-        <select id="selDataset">
-          <option value="dataset1">Danceability</option>
-          <option value="dataset2">Energy</option>
+          <select id="metricDropdown" onchange="updatePlot()">
+            <option value="danceability">Danceability</option>
+            <option value="energy">Energy</option>
+            <option value="tempo">Tempo</option>
+          </select>
         </select>
       </div>
     </div>
