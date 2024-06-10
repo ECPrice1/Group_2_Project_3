@@ -15,20 +15,20 @@
     <div class="row">
       <div class="col-md-12 p-5 text-center bg-light">
         <h1>Popular TikTok Songs Data Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
+        <!-- <p>Use the interactive charts below to explore the dataset</p> -->
       </div>
     </div>
     <br>
     <div class="row">
       <div class="col-md-3">
         <div class="card card-body bg-light">
-          <h6>header 1:</h6>
+          <h6>Choose Metric:</h6>
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
         <br>
         <div class="card card-primary">
           <div class="card-header">
-            <h4 class="card-title">header 2</h4>
+            <h4 class="card-title">Summary Statistics</h4>
           </div>
           <div id="summary_stat" class="card-body"></div>
         </div>
@@ -36,7 +36,7 @@
       <div class="col-md-9">
         <div id="histogram"></div>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8">      
         <canvas id="radar_chart"></canvas>
       </div>
     </div>
@@ -64,11 +64,11 @@
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="https://unpkg.com/mathjs@13.0.0/lib/browser/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <!--<script src="INSERT YOUR JS FILE HERE"></script> -->
   <!--script src="json_output_tik_tok_data_agg.js"></script> -->
   <script src="json_output_tik_tok.js"></script>
   <script src="line_graph.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="radar_chart.js"></script>>
 
 </body>
