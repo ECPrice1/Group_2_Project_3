@@ -23,7 +23,17 @@
       <div class="col-md-3">
         <div class="card card-body bg-light">
           <h6>Choose Metric:</h6>
-          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+          <select id="selDataset" onchange="updateSummary()">
+            <option value="danceability">Danceability</option>
+            <option value="energy">Energy</option>
+            <option value="tempo">Tempo</option>
+            <option value="liveness">Liveness</option>
+            <option value="key">Key</option>
+            <option value="speechiness">Speechiness</option>
+            <option value="acousticness">Acousticness</option>
+            <option value="instrumentalness">Instrumentalness</option>
+            <option value="liveness">Liveness</option>
+            <option value="valence">Valence</option></select>
         </div>
         <br>
         <div class="card card-primary">
@@ -83,6 +93,7 @@
   <script src="line_graph.js"></script>
   <script src="radar_chart.js"></script>
   <script src="histogram.js"></script>
+  <script src="summary_stats.js"></script>
 
 </body>
 
