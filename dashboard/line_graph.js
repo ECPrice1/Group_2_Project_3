@@ -45,8 +45,8 @@ function plotMetric(tiktokData, years, metric) {
   let meanTrace = {
       x: years,
       y: metricArray,
-      type: "bar",
-      //mode: "lines+markers",
+      type: "scatter",
+      mode: "lines+markers",
       name: 'Mean',
       yaxis: 'y',
       line: {
