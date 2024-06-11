@@ -49,7 +49,7 @@ plotHistogram(tiktokData, initialMetric);
 function updateHist() {
 
     // Assign variable to extract metric from selection to display in histogram.
-    let selection = document.getElementById('histogramDropdown').value;
+    let selection = document.getElementById('selDataset').value;
     
     // Recall the plot function.
     plotHistogram(tiktokData, selection);

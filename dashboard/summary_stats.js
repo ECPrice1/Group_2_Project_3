@@ -31,6 +31,7 @@ function summaryStats(tiktokData, metric) {
     let panel = d3.select("#summary_stat");
 
     panel.html("");
+
     panel.append("p").text(`Min: ${metricMin}`);
     panel.append("p").text(`Max: ${metricMax}`);
     panel.append("p").text(`Mean: ${metricMean}`);
@@ -43,11 +44,13 @@ function summaryStats(tiktokData, metric) {
 summaryStats(tiktokData, firstMetric);
 
 
-function updateSummary() {
+function updateChartSummary() {
 
     // Assign variable to extract metric from selection to display in panel.
     let selection = document.getElementById('selDataset').value;
         
     // Recall the summary function.
     summaryStats(tiktokData, selection);
+
+    updateHist();
 };

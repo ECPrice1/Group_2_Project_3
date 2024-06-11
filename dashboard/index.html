@@ -23,7 +23,7 @@
       <div class="col-md-3">
         <div class="card card-body bg-light">
           <h6>Choose Metric:</h6>
-          <select id="selDataset" onchange="updateSummary()">
+          <select id="selDataset" onchange="updateChartSummary()">
             <option value="danceability">Danceability</option>
             <option value="energy">Energy</option>
             <option value="tempo">Tempo</option>
@@ -44,18 +44,9 @@
         </div>
       </div>
       <div class="col-md-9">
-          <select id="histogramDropdown" onchange="updateHist()">
-            <option value="danceability">Danceability</option>
-            <option value="energy">Energy</option>
-            <option value="tempo">Tempo</option>
-            <option value="liveness">Liveness</option>
-            <option value="key">Key</option>
-            <option value="speechiness">Speechiness</option>
-            <option value="acousticness">Acousticness</option>
-            <option value="instrumentalness">Instrumentalness</option>
-            <option value="liveness">Liveness</option>
-            <option value="valence">Valence</option>
-          </select>
+        <h4>Make a song characteristic selection from the dropdown menu to observe its statistical summary and its distribution
+           from 2019 to 2022!
+        </h4>
         <div id="histogram"></div>
       </div>
       <div class="col-md-8">      
