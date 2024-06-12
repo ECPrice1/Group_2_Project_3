@@ -43,7 +43,7 @@ let weeks = [
 // Metric variable for function inputs
 let metric = "danceability";
 
-
+// linear regression function to plot "trendline"
 function linearRegression(x, y) {
   let n = x.length;
   let sumX = x.reduce((a, b) => a + b, 0);
@@ -63,18 +63,17 @@ console.log(intercept)
   return { slope, intercept };
 }
 
-// Function to calculate and plot the average and standard deviation of a metric by week
+// Function to calculate and plot the average of a metric by week
 function plotMetric(tiktokData, weeks, metric) {
-  // Initialize arrays to hold metric averages and standard deviations
+  // Initialize array to hold metric averages
   let metricArray = [];
-  let stdDevArray = [];
 
-  // Loop through the array of years
+  // Loop through the array of weeks
   for (let i = 0; i < weeks.length; i++) {
       let week = weeks[i];
       let values = [];
 
-      // Loop through the data to collect metric values for the current year
+      // Loop through the data to collect metric values for the current week
       for (let j = 0; j < tiktokData.length; j++) {
           let row = tiktokData[j];
 
@@ -83,17 +82,13 @@ function plotMetric(tiktokData, weeks, metric) {
           }
       }
  
-      // Calculate mean and standard deviation for the current year
+      // Calculate mean for the current week
       let meanValue = values.reduce((a, b) => a + b, 0) / values.length;
-      let stdDevValue = Math.sqrt(values.reduce((a, b) => a + Math.pow(b - meanValue, 2), 0) / values.length);
 
-            // Append the mean and standard deviation to the arrays
+            // Append the mean to the array
             metricArray.push(meanValue);
-            stdDevArray.push(stdDevValue);
       
  
-
-
   }
      // Calculate the trendline for the mean values
      let trendline = linearRegression(weeks.map((_, index) => index + 1), metricArray);
@@ -118,8 +113,7 @@ function plotMetric(tiktokData, weeks, metric) {
       yaxis: 'y',
       line: {
         color: 'rgb(54, 162, 235)' // Set the line color for the mean trace (shade of blue)
-    },
-    trendline: 'ols'
+    }
   };
 
   // Add the trendline to the meanTrace object
@@ -135,29 +129,14 @@ let trendlineTrace = {
   }
 };
 
-
-
-  // let stdDevTrace = {
-  //     x: weeks,
-  //     y: stdDevArray,
-  //     type: "scatter",
-  //     mode: "lines+markers",
-  //     name: 'Standard Deviation',
-  //     yaxis: 'y2',
-  //     line: {
-  //       color: 'lightgreen' // Set the line color for the standard deviation trace
-  //   }
-  // };
-
   let data = [meanTrace] ;
-    //stdDevTrace];
 
   // Add the trendline trace to the data array
 data.push(trendlineTrace);
 
   // Layout settings with updated y-axis range
   let layout = {
-    title: `Average and Standard Deviation of ${metric} by year`,
+    title: `Average of ${metric} by week`,
     xaxis: {
         title: "Week",
         tickmode: 'array',
@@ -171,11 +150,6 @@ data.push(trendlineTrace);
     yaxis: {
         title: `Average ${metric}`,
         range: yRange
-    },
-    yaxis2: {
-        title: `Standard Deviation`,
-        overlaying: 'y',
-        side: 'right'
     },
     plot_bgcolor: 'white',
     paper_bgcolor: 'lightgray'
