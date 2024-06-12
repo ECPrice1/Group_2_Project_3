@@ -2,7 +2,7 @@ body {
     background: rgb(3,102,64);
     background: linear-gradient(90deg, rgba(3,102,64,1) 0%, rgba(76,167,102,1) 33%, rgba(182,213,199,1) 100%); 
 }
-.col-md-12{
+.col-md-8.p-5{
     background-color:rgb(122, 122, 122);
 }
 .card.card-body{
@@ -14,6 +14,6 @@ body {
 #summary_stat{
     background-color: lightgray;
 }
-.col-md-10{
+.col-md-8{
     background-color: lightgray;
 }
