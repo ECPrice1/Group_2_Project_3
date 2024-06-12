@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Attributes of Popular Songs on TikTok</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container text-center p-3">
+    <div class="row">
+      <div class="col-md-8 p-5 offset-md-2">
+        <h1>Popular TikTok Songs Data Dashboard</h1>
+        <!-- <p>Use the interactive charts below to explore the dataset</p> -->
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-3 p-5">
+        <div class="card card-body">
+          <h6>Choose Metric:</h6>
+          <select id="selDataset" onchange="updateChartSummary()">
+            <option value="danceability">Danceability</option>
+            <option value="energy">Energy</option>
+            <option value="tempo">Tempo</option>
+            <option value="liveness">Liveness</option>
+            <option value="speechiness">Speechiness</option>
+            <option value="acousticness">Acousticness</option>
+            <option value="instrumentalness">Instrumentalness</option>
+            <option value="liveness">Liveness</option>
+            <option value="valence">Valence</option>
+          </select>
+        </div>
+        <div class="card card-primary mt-2">
+          <div class="card-header">
+            <h4 class="card-title">Summary Statistics</h4>
+          </div>
+          <div id="summary_stat" class="card-body"></div>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <h4>Make a song characteristic selection from the dropdown menu to observe its statistical summary and its distribution
+           from September 2023 to June 2024!
+        </h4>
+      <div id="histogram"></div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h3>Radar Chart</h3>
+        <h6> Click on the colored boxes to add/remove datasets from the chart</h6>
+        <canvas id="radar_chart"></canvas>
+      </div>
+      <div class="col-md-8">
+        <h3> Trends in the data</h3>
+        <h6> Choose metric below to analyze how it has changed over time</h6>
+        <div class="col-md-4 p-2 mt-5">
+          <div class="card card-body">
+            <h6>Choose Metric:</h6>
+            <select id="metricDropdown" onchange="updatePlot()">
+              <option value="danceability">Danceability</option>
+              <option value="energy">Energy</option>
+              <option value="tempo">Tempo</option>
+              <option value="liveness">Liveness</option>
+              <option value="speechiness">Speechiness</option>
+              <option value="acousticness">Acousticness</option>
+              <option value="instrumentalness">Instrumentalness</option>
+              <option value="liveness">Liveness</option>
+              <option value="valence">Valence</option>
+            </select>
+          </div>
+        </div>
+        <div id="line_graph"></div>
+      </div>
+    </div>
+    <div class = "row"> 
+      <div class="col-md-3 p-2 mt-5"> 
+        <div class="card card-body">
+          <h6>Choose Metric:</h6>
+          <select id="rec_chart_Dropdown" onchange="updateRec_Chart()">
+            <option value="danceability">Danceability</option>
+            <option value="energy">Energy</option>
+            <option value="tempo">Tempo</option>
+            <option value="liveness">Liveness</option>
+            <option value="speechiness">Speechiness</option>
+            <option value="acousticness">Acousticness</option>
+            <option value="instrumentalness">Instrumentalness</option>
+            <option value="liveness">Liveness</option>
+            <option value="valence">Valence</option>
+          </select>
+        </div>
+        <p class="d-inline-flex gap-1">
+          <button id="toggleButton" type="button" class="btn btn-light" data-bs-toggle="button">Flip Ordering</button>
+        </p>
+      </div>
+      <div id="rec_chart"></div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://unpkg.com/mathjs@13.0.0/lib/browser/math.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="dashboard/json_output_scraped_tikitok_data.js"></script>
+  <script src="dashboard/line_graph.js"></script>
+  <script src="dashboard/radar_chart.js"></script>
+  <script src="dashboard/histogram.js"></script>
+  <script src="dashboard/rec_chart.js"></script>
+  <script src="dashboard/summary_stats.js"></script>
+    <!-- Button Script -->
+    <script>
+      // Get the button element
+      let button = document.getElementById('toggleButton');
+
+      // Add a click event listener to the button
+      button.addEventListener('click', function() {
+        button_click()
+      }
+      );
+
+      function button_click() {
+      sort_high = !sort_high
+      updateRec_Chart()
+      }
+      </script>
+
+</body>
+
+</html>
