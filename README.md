@@ -6,6 +6,8 @@ In this project we aim to visualize data regarding top TikTok songs from the Spo
 
 ***If you need to know what each song metric means, reference the Characteristic Descriptions section at the bottom of this page.***
 
+Interactive Dashboard: https://ecprice1.github.io/Group_2_Project_3/
+
 ## Instructions
 ### Repository
 
@@ -34,7 +36,7 @@ Files used - [rec_chart](dashboard/rec_chart.js)
 
 ***If you need to know what each song metric means, reference the Characteristic Descriptions section at the bottom of this page.***
 
-Click this link to view the website: *[Insert Github Page]()*
+Click this link to view the website: https://ecprice1.github.io/Group_2_Project_3/
 
 #### Libraries Used:
 - d3
