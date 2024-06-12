@@ -8,22 +8,29 @@ let sorted_data = tiktokData.sort(function sortFunction(a, b) {
     return b[metric] - a[metric]
 })
 
-// Slice the first 10 objects for plotting
-let slicedData = sorted_data.slice(0, 5);
+// Slice the first 50 objects and then delete any duplicates
+let slicedData = sorted_data.slice(0, 50);
+console.log(slicedData)
+let uniquedata = Array.from(new Set(slicedData.map(a => a.title)))
+    .map(title => {
+        return slicedData.find(a => a.title === title);
+    });
+console.log(uniquedata)
+let final_sliced_data = uniquedata.slice(0,5)
 
 // Reverse the array to accommodate Plotly's defaults
-slicedData.reverse();
-x_values = slicedData.map(object => object[metric])
+final_sliced_data.reverse();
+x_values = final_sliced_data.map(object => object[metric])
 console.log(x_values)
 minXValue = math.min(x_values)
 maxXValue = math.max(x_values) 
 console.log(minXValue)
 console.log(maxXValue)
-console.log( slicedData.map(object => object.title + " by " + object.artist +" " ))
+console.log( final_sliced_data.map(object => object.title + " by " + object.artist +" " ))
 let trace1 = {
   x: x_values,
-  y: slicedData.map(object => object.title + " by " + object.artist +" " ),
-  text: slicedData.map(object => object.tittle),
+  y: final_sliced_data.map(object => object.title + " by " + object.artist +" " ),
+  text: final_sliced_data.map(object => object.tittle),
   name: "Recommendations",
   type: "bar",
   orientation: "h"
