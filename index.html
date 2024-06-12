@@ -28,7 +28,6 @@
             <option value="danceability">Danceability</option>
             <option value="energy">Energy</option>
             <option value="tempo">Tempo</option>
-            <option value="mode">Mode</option>
             <option value="liveness">Liveness</option>
             <option value="speechiness">Speechiness</option>
             <option value="acousticness">Acousticness</option>
@@ -64,7 +63,6 @@
             <option value="danceability">Danceability</option>
             <option value="energy">Energy</option>
             <option value="tempo">Tempo</option>
-            <option value="mode">Mode</option>
             <option value="liveness">Liveness</option>
             <option value="speechiness">Speechiness</option>
             <option value="acousticness">Acousticness</option>
@@ -92,6 +90,9 @@
             <option value="valence">Valence</option>
           </select>
         </div>
+        <p class="d-inline-flex gap-1">
+          <button id="toggleButton" type="button" class="btn btn-light" data-bs-toggle="button">Flip Ordering</button>
+        </p>
       </div>
       <div id="rec_chart"></div>
     </div>
@@ -107,6 +108,22 @@
   <script src="dashboard/histogram.js"></script>
   <script src="dashboard/rec_chart.js"></script>
   <script src="dashboard/summary_stats.js"></script>
+    <!-- Button Script -->
+    <script>
+      // Get the button element
+      let button = document.getElementById('toggleButton');
+      
+      // Add a click event listener to the button
+      button.addEventListener('click', function() {
+        button_click()
+      }
+      );
+
+      function button_click() {
+      sort_high = !sort_high
+      updateRec_Chart()
+      }
+      </script>
 
 </body>
 

@@ -1,13 +1,23 @@
 // Initialize the chart with a certain metric already displayed
 let initialMetric_rec_chart = 'danceability';
 
+// Create variable to know sorting direction
+var sort_high = true
+
+
+
 // Function to create chart.
 function plotRec_Chart(tiktokData, metric) {
 // Sort the data by given metric
-let sorted_data = tiktokData.sort(function sortFunction(a, b) {
+if (sort_high) {
+var sorted_data = tiktokData.sort(function sortFunction(a, b) {
     return b[metric] - a[metric]
 })
-
+}
+else {
+  var sorted_data = tiktokData.sort(function sortFunction(a, b) {
+    return  a[metric] - b[metric]
+})}
 // Slice the top 50 objects and then delete any duplicates
 let slicedData = sorted_data.slice(0, 50);
 // This code snippet identifies unique song titles in the slicedData, and then pulls the metrics for just that set of unique song titles, removing duplicates that appear in the list
@@ -27,22 +37,33 @@ let trace1 = {
   y: final_sliced_data.map(object => object.title + "<br> by " + object.artist +" " ), // song name and artist will display to the left
   text: final_sliced_data.map(object => object.tittle),
   type: "bar",
-  orientation: "h" //horizontal bar chart
+  orientation: "h", //horizontal bar chart
+  marker: {
+    color: 'rgba(100, 200, 102, 0.7)'
+  }
 };
 
 // Data array
 let data = [trace1];
 
+// Create variable to switch between top and bottom 5 songs
+if (sort_high) {
+  var vers = "Top"
+}
+else {
+  var vers = "Bottom"
+}
+
 // Create the layout with a title, and forced pixel heights and widths
 let layout = {
-  title: `Recommendations <br> <sup> Top 5 ${metric} songs </sup>`,
+  title: `Recommendations <br> <sup> ${vers} 5 ${metric} songs </sup>`,
   height: 600,
   width: 1400,
   margin: {
     l: 330,  // Adjust this value as needed to show all text on the left
   },
   autosize: true,
-  paper_bgcolor: 'lightgray'
+  paper_bgcolor: 'gainsboro'
 };
 
 // Render the plot to the appropiate tag
@@ -61,3 +82,4 @@ function updateRec_Chart() {
     // Re-call the plot function.
     plotRec_Chart(tiktokData, selection);
 };
+
