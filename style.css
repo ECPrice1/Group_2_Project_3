@@ -17,3 +17,7 @@ body {
 .col-md-8{
     background-color: whitesmoke;
 }
+.col-md-8 {
+    width: 50%;
+    float: left;
+  }
