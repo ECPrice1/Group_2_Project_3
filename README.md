@@ -9,13 +9,15 @@ In this project we aim to visualize data regarding top TikTok songs from the Spo
 ## Instructions
 ### Repository
 
-This repository contains two juptyer notebooks, the first notebook [Tiktok.ipynb](Tiktok.ipynb) we used for cleaning our original data sets from Kaggle. In the second notebook [scrape.ipynb](scrape.ipynb) we utilized web scraping methods and API calls to Spotify to find top songs and their characteristics from September 2023 to June 2024.
+This repository contains a jupyter notebook, [scrape.ipynb](scrape.ipynb). In this notebook, we utilized web scraping methods to take the Top 50 tiktok songs from billboard (https://www.billboard.com/charts/tiktok-billboard-top-50/) and API calls to Spotify to find top songs and their characteristics from September 2023 to June 2024.
 
-There is a [database_creation.sql](database_creation.sql) file that shows how we were able to create a database in PostgreSQL and store our data there.
+Inside of the SQL folder, there is a [database_creation.sql](database_creation.sql) file that shows how we were able to create a database in PostgreSQL and store our data there as well as a screenshot (database_proof.png).
 
-In this repostiory you will find two folders, resources and dashboard. The resources folder contains all original csv files of TikTok songs from 2019 to 2022 downloaded from Kaggle. This folder also includes the final_tik_tok.csv concatenated version of all these files which we created and then converted to json format in the json_output_tik_tok file. We also have the scraped_tiktok_data.csv and json_output_scraped_tiktok_data files that hold our scraped data from Spotify.
+In this repostiory you will find two folders, resources and dashboard. The resources folder contains our scraped data in csv and json format, named scraped_tiktok_data.csv and json_output_scraped_tiktok_data.
 
-We have our dashboard folder holding our [index.html](dashboard/index.html) file for our webpage that references all of our JavaScript files within that same folder. Each JS file is named based on what part of the HTML it is representing, the json_output files are what we used to reference the data in the webpage itself.
+We have our dashboard folder holding our all of our JavaScript files. Each JS file is named based on what part of the HTML it is representing, the json_output_scraped_tiktok_data.js file is what we used to reference the data in the webpage itself.
+
+Our [index.html](dashboard/index.html) file is located in the main folder and is used to deploy our webpage to Github Pages.
 
 ### Webpage
 In our interactive data dashboard webpage we have a summary statistics panel and a histogram showing the distribution of a song characteristic at the top of the page that can be be changed with a dropdown menu to display a different characteristic.<br>
@@ -37,10 +39,11 @@ Click this link to view the website: *[Insert Github Page]()*
 #### Libraries Used:
 - d3
 - Plotly
-- Chart.js
+- chart.js
+- math.js
 
 ## Ethical Considerations
-There are concerns with bias regarding our project because the data was scraped from Billboard top 50 list which is based on expert opinion compared to the average person using TikTok.
+There are concerns with bias regarding our project because the data was scraped from Billboard top 50 list which is based on expert opinion compared to the average person using TikTok. In addition, while what the metrics from Spotify describe, we don't know the entire context behind their creation so there could potentially be hidden bias within those metrics.
 
 ## References
 ### Data References
@@ -55,9 +58,11 @@ There are concerns with bias regarding our project because the data was scraped 
 
  - Plotly Documentation: https://plotly.com/javascript/
 
- - Chart.js Documentation: https://www.chartjs.org/docs/latest/charts/radar.html
+ - chart.js Documentation: https://www.chartjs.org/docs/latest/charts/radar.html
 
  - d3 Documentation: https://d3js.org/
+
+ - math.js: https://mathjs.org/docs/index.html 
 
  - We also referenced past lesson material and code from module 14.
 
