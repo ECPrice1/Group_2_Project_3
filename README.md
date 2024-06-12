@@ -13,13 +13,13 @@ Interactive Dashboard: https://ecprice1.github.io/Group_2_Project_3/
 
 This repository contains a jupyter notebook, [scrape.ipynb](scrape.ipynb). In this notebook, we utilized web scraping methods to take the Top 50 tiktok songs from billboard (https://www.billboard.com/charts/tiktok-billboard-top-50/) and API calls to Spotify to find top songs and their characteristics from September 2023 to June 2024.
 
-Inside of the SQL folder, there is a [database_creation.sql](database_creation.sql) file that shows how we were able to create a database in PostgreSQL and store our data there as well as a screenshot (database_proof.png).
+Inside of the SQL folder, there is a [database_creation.sql](SQL/database_creation.sql) file that shows how we were able to create a database in PostgreSQL and store our data there as well as a screenshot (database_proof.png).
 
 In this repostiory you will find two folders, resources and dashboard. The resources folder contains our scraped data in csv and json format, named scraped_tiktok_data.csv and json_output_scraped_tiktok_data.
 
 We have our dashboard folder holding our all of our JavaScript files. Each JS file is named based on what part of the HTML it is representing, the json_output_scraped_tiktok_data.js file is what we used to reference the data in the webpage itself.
 
-Our [index.html](dashboard/index.html) file is located in the main folder and is used to deploy our webpage to Github Pages.
+Our [index.html](index.html) file is located in the main folder and is used to deploy our webpage to Github Pages.
 
 ### Webpage
 In our interactive data dashboard webpage we have a summary statistics panel and a histogram showing the distribution of a song characteristic at the top of the page that can be be changed with a dropdown menu to display a different characteristic.<br>
