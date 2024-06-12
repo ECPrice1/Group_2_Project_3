@@ -19,11 +19,11 @@ minXValue = math.min(x_values)
 maxXValue = math.max(x_values) 
 console.log(minXValue)
 console.log(maxXValue)
-console.log( slicedData.map(object => object.track_name + " by " + object.artist_name +" " ))
+console.log( slicedData.map(object => object.title + " by " + object.artist +" " ))
 let trace1 = {
   x: x_values,
-  y: slicedData.map(object => object.track_name + " by " + object.artist_name +" " ),
-  text: slicedData.map(object => object.track_name),
+  y: slicedData.map(object => object.title + " by " + object.artist +" " ),
+  text: slicedData.map(object => object.tittle),
   name: "Recommendations",
   type: "bar",
   orientation: "h"
