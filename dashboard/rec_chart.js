@@ -42,10 +42,8 @@ let data = [trace1];
 // Apply a title to the layout
 let layout = {
   title: "Recommendations",
-  height: 600,
-  width: 1400,
   margin: {
-    l: 400,  // Adjust this value as needed to show all text on the left
+    l: 250,  // Adjust this value as needed to show all text on the left
   },
   autosize: true,
 //   xaxis: {

@@ -1,0 +1,19 @@
+body {
+    background: rgb(3,102,64);
+    background: linear-gradient(90deg, rgba(3,102,64,1) 0%, rgba(76,167,102,1) 33%, rgba(182,213,199,1) 100%); 
+}
+.col-md-12{
+    background-color:rgb(122, 122, 122);
+}
+.card.card-body{
+    background-color: darkgray;
+}
+.card-header{
+    background-color: darkgray;
+}
+#summary_stat{
+    background-color: lightgray;
+}
+.col-md-10{
+    background-color: lightgray;
+}
