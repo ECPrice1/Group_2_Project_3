@@ -1,4 +1,4 @@
-# Group_2_Project_3
+# Tiktokify!
 
 ## Project Overview
 
