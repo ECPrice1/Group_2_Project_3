@@ -6,7 +6,7 @@ In this project we aim to visualize data regarding top TikTok songs from the Spo
 
 ***If you need to know what each song metric means, reference the Characteristic Descriptions section at the bottom of this page.***
 
-Interactive Dashboard: https://ecprice1.github.io/Group_2_Project_3/
+Interactive Dashboard: https://ecprice1.github.io/Tiktokify/
 
 ## Instructions
 ### Repository
