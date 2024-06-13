@@ -28,7 +28,7 @@ Files used - [histogram.js](dashboard/histogram.js), [summary_stats.js](dashboar
 Below this we have a radar chart that we created with the Chart.js library which displays the average score for five different song metrics for a given month. This is an interactive overlay chart that can be altered to show all the data or only specific months.<br>
 Files used - [radar_chart.js](dashboard/radar_chart.js)
 
-Next we have a line graph that plots the mean and standard deviation of a given song metric over the course of 6 months. This graph can change from the options on the dropdown menu above.<br>
+Next we have a line graph that plots the mean and a trendline of a given song metric over the course of 6 months. This graph can change from the options on the dropdown menu above.<br>
 Files used - [line_graph.js](dashboard/line_graph.js)
 
 Lastly we have a recommendations chart which shows the top five songs for a given song metric that you might want to use for your advertisement. This can be changed as well by choosing an option from the dropdown above for a different song metric.<br>
