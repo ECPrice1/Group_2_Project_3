@@ -11,11 +11,13 @@ function plotRec_Chart(tiktokData, metric) {
 // Sort the data by given metric
 if (sort_high) {
 var sorted_data = tiktokData.sort(function sortFunction(a, b) {
+  console.log(metric)
     return b[metric] - a[metric]
 })
 }
 else {
   var sorted_data = tiktokData.sort(function sortFunction(a, b) {
+    console.log(metric)
     return  a[metric] - b[metric]
 })}
 // Slice the top 50 objects and then delete any duplicates
@@ -31,7 +33,8 @@ let final_sliced_data = uniquedata.slice(0,5)
 // Reverse the array to accommodate Plotly's defaults
 final_sliced_data.reverse();
 
-
+console.log(metric)
+console.log(final_sliced_data.map(object => object[metric]))
 let trace1 = {
   x: final_sliced_data.map(object => object[metric]), 
   y: final_sliced_data.map(object => object.title + "<br> by " + object.artist +" " ), // song name and artist will display to the left

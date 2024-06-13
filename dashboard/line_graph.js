@@ -50,16 +50,8 @@ function linearRegression(x, y) {
   let sumY = y.reduce((a, b) => a + b, 0);
   let sumXY = x.map((val, i) => val * y[i]).reduce((a, b) => a + b, 0);
   let sumXSquare = x.map(val => val * val).reduce((a, b) => a + b, 0);
-  console.log(n)
-  console.log(y.length)
-  console.log(sumX)
-  console.log(sumY)
-  console.log(sumXY)
-  console.timeLog(sumXSquare)
   let slope = (n * sumXY - sumX * sumY) / (n * sumXSquare - sumX * sumX);
   let intercept = (sumY - slope * sumX) / n;
-console.log(slope)
-console.log(intercept)
   return { slope, intercept };
 }
 
@@ -92,8 +84,6 @@ function plotMetric(tiktokData, weeks, metric) {
   }
      // Calculate the trendline for the mean values
      let trendline = linearRegression(weeks.map((_, index) => index + 1), metricArray);
-     console.log(trendline)
-     console.log(trendline)
      let trendlineValues = weeks.map((_, index) => trendline.slope * (index + 1) + trendline.intercept);
 
   // Calculate the minimum and maximum values of the metric data
